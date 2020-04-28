@@ -1,1 +1,1 @@
-# ingredients-carousell-and-equipment-list
+# ingredients-carousel-and-equipment-list
