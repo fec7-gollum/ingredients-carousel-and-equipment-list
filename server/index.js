@@ -1,8 +1,24 @@
 const express = require('express');
-const db = require('../database/index.js');
+const path = require('path');
+const { db, Recipe, Ingredient, Equipment } = require('../database/index.js');
 
 const app = express();
 const port = 3000;
+
+app.get('/api/ingredients/:id', (req, res) => {
+  id = path.basename(req.url);
+  Ingredient.findAll({where: {recipeId: id}})
+  .then(ingredients => {
+    res.status('200')
+    res.send(ingredients);
+    res.end();
+  })
+  .catch(err => {
+    console.error(err);
+    res.send(err);
+    res.end();
+  })
+})
 
 app.use(express.json())
 app.use(express.static(__dirname + '/../client/dist'))
