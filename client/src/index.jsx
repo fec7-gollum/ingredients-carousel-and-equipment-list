@@ -11,22 +11,17 @@ class App extends React.Component {
       ingredients: [],
       equipment: []
     };
-
-    this.getIngredients = Parse.getIngredients.bind(this);
-    this.getEquipment = Parse.getEquipment.bind(this);
   }
 
   componentDidMount() {
     Parse.getIngredients.call(this, 1)
       .then(res => {
-        console.log(res)
         this.setState({
           ingredients: res
         })
       });
     Parse.getEquipment.call(this, 1)
       .then(res => {
-        console.log(res)
         this.setState({
           equipment: res
         })
