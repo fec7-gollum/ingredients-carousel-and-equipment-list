@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Parse from './components/parse.jsx';
+import IngredientList from './components/ingredientList.jsx';
+import IngredientImgs from './components/IngredientImgs.jsx';
 
 class App extends React.Component {
 
@@ -30,7 +32,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>you should be able to see this</div>
+      <div>
+      <IngredientList ingredients={this.state.ingredients}/>
+      <IngredientImgs ingredients={this.state.ingredients}/>
+      </div>
     )
   }
 }
