@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Parse from './components/parse.jsx';
 
 class App extends React.Component {
 
@@ -7,8 +8,24 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      ingredients: [],
+      equipment: []
+    };
+  }
 
-    }
+  componentDidMount() {
+    Parse.getIngredients.call(this, 1)
+      .then(res => {
+        this.setState({
+          ingredients: res
+        })
+      });
+    Parse.getEquipment.call(this, 1)
+      .then(res => {
+        this.setState({
+          equipment: res
+        })
+      });
   }
 
   render() {
