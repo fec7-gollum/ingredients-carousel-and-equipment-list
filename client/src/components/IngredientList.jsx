@@ -1,19 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-let IngredientList = (props) => {
-  return (
+const IngredientList = ({ ingredients }) => (
   <ul>
-  {props.ingredients.map(ingredient => {
-      return (
+    {ingredients.map((ingredient) => (
       <li>
-        <label>
-          <input type="checkbox"/>
-          {ingredient.description}
-        </label>
+        <input type="checkbox" id={ingredient.id} />
+        <label htmlFor={ingredient.id}>{ingredient.description}</label>
       </li>
-      )
-    })}
-  </ul>)
-}
+    ))}
+  </ul>
+);
+
+IngredientList.propTypes = {
+  ingredients: PropTypes.arrayOf.isRequired,
+};
 
 export default IngredientList;

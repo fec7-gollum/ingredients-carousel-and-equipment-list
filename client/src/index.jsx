@@ -1,42 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Parse from './components/parse.jsx';
-import IngredientList from './components/ingredientList.jsx';
-import IngredientImgs from './components/IngredientImgs.jsx';
+import Parse from './components/parse';
+import IngredientList from './components/IngredientList';
+import IngredientImgs from './components/IngredientImgs';
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
       ingredients: [],
-      equipment: []
+      equipment: [],
     };
   }
 
   componentDidMount() {
     Parse.getIngredients.call(this, 1)
-      .then(res => {
-        this.setState({
-          ingredients: res
-        })
-      });
+      .then((res) => { this.setState({ ingredients: res }); });
     Parse.getEquipment.call(this, 1)
-      .then(res => {
-        this.setState({
-          equipment: res
-        })
-      });
+      .then((res) => { this.setState({ equipment: res }); });
   }
 
   render() {
+    const { ingredients } = this.state;
     return (
       <div>
-      <IngredientList ingredients={this.state.ingredients}/>
-      <IngredientImgs ingredients={this.state.ingredients}/>
+        <IngredientList ingredients={ingredients} />
+        <IngredientImgs ingredients={ingredients} />
       </div>
-    )
+    );
   }
 }
 

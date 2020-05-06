@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-let IngredientsImgs = (props) => {
-  return (
-    <div>
-      {props.ingredients.map(ingredient => {
-        return (<img src={ingredient.imgUrl}/>)
-      })}
-    </div>
-  )
-}
+const IngredientImgs = ({ ingredients }) => (
+  <div>
+    {ingredients.map((ingredient) => (<img src={ingredient.imgUrl} alt="" />))}
+  </div>
+);
 
-export default IngredientsImgs;
+IngredientImgs.propTypes = {
+  ingredients: PropTypes.arrayOf.isRequired,
+};
+
+export default IngredientImgs;
