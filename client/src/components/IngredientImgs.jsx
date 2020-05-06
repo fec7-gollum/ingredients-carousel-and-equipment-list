@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const IngredientImgs = ({ ingredients }) => (
-  <div>
+  <div id="IngredientImgs">
     {ingredients.map((ingredient) => (<img src={ingredient.imgUrl} alt="" />))}
   </div>
 );
