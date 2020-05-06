@@ -1,0 +1,7 @@
+#IngredientList {
+  position: fixed;
+}
+#IngredientImgs {
+  position: fixed;
+  visibility: hidden;
+}
