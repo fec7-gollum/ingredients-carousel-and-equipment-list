@@ -6,7 +6,10 @@
   "scripts": {
     "build": "webpack -p --watch",
     "start": "nodemon server/index.js",
-    "seed": "node database/seed.js"
+    "seed": "node database/seed.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest - --coverage --colors"
   },
   "repository": {
     "type": "git",
@@ -20,10 +23,13 @@
   "homepage": "https://github.com/fec7-gollum/ingredients-carousel-and-equipment-list#readme",
   "dependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
     "aws-sdk": "^2.666.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^26.0.1",
     "babel-loader": "^8.1.0",
     "eslint-plugin-react": "^7.19.0",
     "express": "^4.17.1",
@@ -36,14 +42,18 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "sequelize": "^5.21.7",
+    "supertest": "^4.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   },
   "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react-hooks": "^2.5.0"
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "react-test-renderer": "^16.13.1"
   }
 }

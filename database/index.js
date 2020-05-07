@@ -4,14 +4,14 @@ const db = new Sequelize('recipes', 'root', '', {
   dialect: 'mysql',
 });
 
-db
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  });
+// db
+//   .authenticate()
+//   .then(() => {
+//     console.log('Connection has been established successfully.');
+//   })
+//   .catch((err) => {
+//     console.error('Unable to connect to the database:', err);
+//   });
 
 const Recipe = db.define('recipe', {});
 
@@ -45,9 +45,9 @@ const Equipment = db.define('equipment', {
 
 Equipment.belongsTo(Recipe);
 
-Recipe.sync();
-Ingredient.sync();
-Equipment.sync();
+// Recipe.sync();
+// Ingredient.sync();
+// Equipment.sync();
 
 module.exports = {
   db,

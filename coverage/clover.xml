@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1588812132391" clover="3.2.0">
+  <project timestamp="1588812132391" name="All files">
+    <metrics statements="33" coveredstatements="20" conditionals="4" coveredconditionals="0" methods="18" coveredmethods="11" elements="55" coveredelements="31" complexity="0" loc="33" ncloc="33" packages="2" files="4" classes="4"/>
+    <package name="src">
+      <metrics statements="18" coveredstatements="9" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="5"/>
+      <file name="index.jsx" path="/Users/Max/Documents/HackReactor/FEC/ingredients-carousel-and-equipment-list/client/src/index.jsx">
+        <metrics statements="18" coveredstatements="9" conditionals="4" coveredconditionals="0" methods="8" coveredmethods="5"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="15" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="6"/>
+      <file name="IngredientImgs.jsx" path="/Users/Max/Documents/HackReactor/FEC/ingredients-carousel-and-equipment-list/client/src/components/IngredientImgs.jsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+      <file name="IngredientList.jsx" path="/Users/Max/Documents/HackReactor/FEC/ingredients-carousel-and-equipment-list/client/src/components/IngredientList.jsx">
+        <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="parse.jsx" path="/Users/Max/Documents/HackReactor/FEC/ingredients-carousel-and-equipment-list/client/src/components/parse.jsx">
+        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

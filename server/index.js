@@ -38,4 +38,6 @@ app.get('/api/equipment/:id', (req, res) => {
     });
 });
 
+module.exports = app;
+
 app.listen(port, () => console.log(`listening on port ${port}`));

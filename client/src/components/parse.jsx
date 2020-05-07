@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 const Parse = {
   getIngredients: (id) => fetch(`/api/ingredients/${id}`, {
     method: 'GET',
