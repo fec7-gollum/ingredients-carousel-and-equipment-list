@@ -1,7 +1,61 @@
+#inner {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 5% 95%;
+  overflow: hidden;
+}
+#grid {
+  display: grid;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-template-columns: 5% 60% 35%;
+}
+#header {
+  display: grid;
+  grid-template-columns: 5% 50% 10% 35%;
+}
+#title {
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+#buttons {
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
 #IngredientList {
-  position: fixed;
 }
 #IngredientImgs {
-  position: fixed;
-  visibility: hidden;
+  max-width: 600px;
+}
+#scroller {
+  z-index: -1;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  width: 200%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  transition: transform .6s cubic-bezier(.55,.085,.68,.53);
+}
+.slide {
+  transform: translateX(-50%);
+}
+#cover-right {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  z-index: 2;
+  /* position: absolute; */
+  /* margin-left: 49%; */
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+#cover-left {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  z-index: 2;
+  width: 100%;
+  /* position: absolute; */
+  height: 100vh;
+  background-color: white;
 }
