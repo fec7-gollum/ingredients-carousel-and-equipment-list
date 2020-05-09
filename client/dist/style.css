@@ -29,7 +29,6 @@
   max-width: 600px;
 }
 #scroller {
-  z-index: -1;
   grid-column-start: 2;
   grid-column-end: 2;
   width: 200%;
