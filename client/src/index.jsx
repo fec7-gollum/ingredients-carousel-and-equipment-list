@@ -3,20 +3,7 @@ import ReactDOM from 'react-dom';
 import Parse from './components/parse';
 import IngredientList from './components/IngredientList';
 import IngredientImgs from './components/IngredientImgs';
-
-const handleClick = (e) => {
-  e.preventDefault();
-  if (e.target.value === 'IngredientImgs') {
-    // document.getElementById('IngredientImgs').style.visibility = 'visible';
-    // document.getElementById('IngredientList').style.visibility = 'hidden';
-    document.getElementById('scroller').classList.add('slide');
-  }
-  if (e.target.value === 'IngredientList') {
-    // document.getElementById('IngredientList').style.visibility = 'visible';
-    // document.getElementById('IngredientImgs').style.visibility = 'hidden';
-    document.getElementById('scroller').classList.remove('slide');
-  }
-};
+import buttons from '../dist/styles/buttons';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,26 +11,47 @@ class App extends React.Component {
 
     this.state = {
       ingredients: [],
-      equipment: [],
+      listButton: buttons.list_clicked,
+      imgButton: buttons.imgs_unclicked,
     };
   }
 
   componentDidMount() {
     Parse.getIngredients.call(this, 1)
       .then((res) => { this.setState({ ingredients: res }); });
-    Parse.getEquipment.call(this, 1)
-      .then((res) => { this.setState({ equipment: res }); });
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    if (e.target.value === 'IngredientImgs') {
+      // document.getElementById('IngredientImgs').style.visibility = 'visible';
+      // document.getElementById('IngredientList').style.visibility = 'hidden';
+      document.getElementById('scroller').classList.add('slide');
+      this.setState({
+        listButton: buttons.list_unclicked,
+        imgButton: buttons.imgs_clicked,
+      });
+    }
+    if (e.target.value === 'IngredientList') {
+      // document.getElementById('IngredientList').style.visibility = 'visible';
+      // document.getElementById('IngredientImgs').style.visibility = 'hidden';
+      document.getElementById('scroller').classList.remove('slide');
+      this.setState({
+        listButton: buttons.list_clicked,
+        imgButton: buttons.imgs_unclicked,
+      });
+    }
   }
 
   render() {
-    const { ingredients } = this.state;
+    const { ingredients, listButton, imgButton } = this.state;
     return (
       <div id="inner">
         <div id="header">
           <div id="title">Ingredients</div>
           <div id="buttons">
-            <button type="button" onClick={(e) => handleClick(e)} id="listButton" value="IngredientList" label="List">List</button>
-            <button type="button" onClick={(e) => handleClick(e)} id="imgButton" value="IngredientImgs" label="Img">Img</button>
+            <input type="image" src={listButton} alt="" onClick={(e) => this.handleClick(e)} id="listButton" value="IngredientList" label="List" />
+            <input type="image" src={imgButton} alt="" onClick={(e) => this.handleClick(e)} id="imgButton" value="IngredientImgs" label="Img" />
           </div>
         </div>
         <div id="grid">

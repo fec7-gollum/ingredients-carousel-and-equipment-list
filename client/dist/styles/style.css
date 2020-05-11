@@ -19,7 +19,7 @@ body {
 }
 #header {
   display: grid;
-  grid-template-columns: 5% 50% 10% 35%;
+  grid-template-columns: 5% 45% 15% 35%;
 }
 #title {
   font-weight: 600;
@@ -101,4 +101,6 @@ body {
   /* position: absolute; */
   height: 100vh;
   background-color: white;
+} #listButton, #imgButton {
+  margin-left: 10px;
 }
