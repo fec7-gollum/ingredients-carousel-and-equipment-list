@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(express.static(`${__dirname}/../client/dist`));
+app.use('/:id', express.static(`${__dirname}/../client/dist`));
 
 app.get('/api/ingredients/:id', (req, res) => {
   const id = path.basename(req.url);

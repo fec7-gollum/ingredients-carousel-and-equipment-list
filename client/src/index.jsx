@@ -17,15 +17,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    Parse.getIngredients.call(this, 1)
+    Parse.getIngredients.call(this)
       .then((res) => { this.setState({ ingredients: res }); });
   }
 
   handleClick(e) {
     e.preventDefault();
     if (e.target.value === 'IngredientImgs') {
-      // document.getElementById('IngredientImgs').style.visibility = 'visible';
-      // document.getElementById('IngredientList').style.visibility = 'hidden';
       document.getElementById('scroller').classList.add('slide');
       this.setState({
         listButton: buttons.list_unclicked,
@@ -33,8 +31,6 @@ class App extends React.Component {
       });
     }
     if (e.target.value === 'IngredientList') {
-      // document.getElementById('IngredientList').style.visibility = 'visible';
-      // document.getElementById('IngredientImgs').style.visibility = 'hidden';
       document.getElementById('scroller').classList.remove('slide');
       this.setState({
         listButton: buttons.list_clicked,
