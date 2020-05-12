@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 const Parse = {
-  getIngredients: () => fetch(`/api/ingredients${window.location.pathname}`, {
+  getIngredients: () => fetch(`http://localhost:3001/api/ingredients${window.location.pathname}`, {
     method: 'GET',
   })
     .then((res) => res.json())

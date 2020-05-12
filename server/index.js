@@ -1,12 +1,23 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const { Ingredient, Equipment } = require('../database/index.js');
 
+
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(express.json());
-app.use('/:id', express.static(`${__dirname}/../client/dist`));
+app.use(cors());
+app.use('/:id', express.static(`${__dirname}/../client/dist`, {
+  setHeaders: (res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+  },
+}));
+app.use((req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 app.get('/api/ingredients/:id', (req, res) => {
   const id = path.basename(req.url);
