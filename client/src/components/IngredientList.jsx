@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as styles from './Styles';
 
 const IngredientList = ({ ingredients }) => (
-  <div id="IngredientList">
-    <ul>
+  <styles.IngListDiv>
+    <styles.IngListUl>
       {ingredients.map((ingredient) => (
         <li>
-          <input type="checkbox" id={ingredient.id} />
+          <styles.IngListCheckbox id={ingredient.id} />
           <label htmlFor={ingredient.id}>{ingredient.description}</label>
         </li>
       ))}
-    </ul>
-  </div>
+    </styles.IngListUl>
+  </styles.IngListDiv>
 );
 
 IngredientList.propTypes = {

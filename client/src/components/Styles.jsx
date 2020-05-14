@@ -1,48 +1,58 @@
-body {
-  font-family: Graphik Web,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
-  font-weight: 300;
-  font-size: 1.4rem;
-  -webkit-font-smoothing: antialiased;
-}
-#inner {
+import styled from 'styled-components';
+
+const Inner = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-rows: 8% 92%;
   overflow: hidden;
-}
-#grid {
+`;
+
+const Grid = styled.div`
   display: grid;
   grid-row-start: 2;
   grid-row-end: 2;
   grid-template-columns: 5% 60% 35%;
-}
-#header {
+`;
+
+const Header = styled.div`
   display: grid;
   grid-template-columns: 5% 45% 15% 35%;
-}
-#title {
+`;
+
+const Title = styled.div`
+  font-family: Graphik Web,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  font-size: 1.4rem;
   font-weight: 600;
   grid-column-start: 2;
   grid-column-end: 2;
   letter-spacing: 3px;
   line-height: 1.25;
-}
-#buttons {
-  grid-column-start: 3;
-  grid-column-end: 3;
-}
-#IngredientList {
+`;
+
+const TabButtons = styled.input`
+  margin-left: 10px;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+const IngListDiv = styled.div`
   font-family: futura-pt,sans-serif;
   font-weight: 550;
   letter-spacing: 1px;
   font-size: .8rem;
   line-height: 2.2;
-} ul{
+`;
+
+const IngListUl = styled.ul`
   padding-inline-start: 0;
   list-style: none;
   margin: auto;
-} input[type=checkbox] {
+`;
+
+const IngListCheckbox = styled.input.attrs({ type: 'checkbox' })`
   margin: auto;
   width: 15px;
   height: 15px;
@@ -52,56 +62,82 @@ body {
   -moz-appearance: none;
   appearance: none;
   border-radius: 0;
-} input[type=checkbox]:checked {
-  background-color: black;
-  color: white;
-} input[type=checkbox]:checked:after {
-  content: '';
-  display: block;
-  width: 4px;
-  height: 7px;
-  border: solid #FFF;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  margin-left: 3px;
-  margin-top: 1px;
-}
-#IngredientImgs {
+
+  &:focus {
+    outline: none;
+  }
+
+  &:checked {
+    background-color: black;
+    color: white;
+  }
+
+  &:checked:after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 7px;
+    border: solid #FFF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-left: 3px;
+    margin-top: 1px;
+  }
+`;
+
+const IngImgDiv = styled.div`
   margin: 0;
   max-width: 650px;
-}#IngredientImgs img {
+`;
+
+const IngImg = styled.img`
   min-height: 150px;
   min-width: 150px;
   max-height: 150px;
   max-width: 150px;
   padding: 5px;
-}
-#scroller {
+`;
+
+const Scroller = styled.div`
   grid-column-start: 2;
   grid-column-end: 2;
   width: 200%;
   display: grid;
   grid-template-columns: 50% 50%;
   transition: transform .6s cubic-bezier(.55,.085,.68,.53);
-}
-.slide {
-  transform: translateX(-50%);
-}
-#cover-right {
+  transform: ${(props) => (props.isSlid ? 'translateX(-50%)' : 'translateX(0%)')};
+`;
+
+const RightCover = styled.div`
   grid-column-start: 3;
   grid-column-end: 3;
   z-index: 2;
   width: 100%;
   height: 100%;
   background-color: white;
-}
-#cover-left {
+`;
+
+const LeftCover = styled.div`
   grid-column-start: 1;
   grid-column-end: 2;
   z-index: 2;
   width: 100%;
   height: 100vh;
   background-color: white;
-} #listButton, #imgButton {
-  margin-left: 10px;
-}
+`;
+
+export {
+  Inner,
+  Grid,
+  Header,
+  Title,
+  TabButtons,
+  IngListDiv,
+  IngListUl,
+  IngListCheckbox,
+  IngImgDiv,
+  IngImg,
+  Scroller,
+  RightCover,
+  LeftCover,
+};
