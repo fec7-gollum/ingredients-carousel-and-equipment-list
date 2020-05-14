@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as styles from './Styles';
 
 const IngredientImgs = ({ ingredients }) => (
-  <div id="IngredientImgs">
-    {ingredients.map((ingredient) => (<img src={ingredient.imgUrl} alt="" />))}
-  </div>
+  <styles.IngImgDiv>
+    {ingredients.map((ingredient) => (<styles.IngImg src={ingredient.imgUrl} alt="" />))}
+  </styles.IngImgDiv>
 );
 
 IngredientImgs.propTypes = {
