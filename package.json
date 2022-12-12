@@ -34,7 +34,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "cors": "^2.8.5",
     "eslint-plugin-react": "^7.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "faker": "^4.1.0",
     "jest": "^25.5.2",
     "mysql2": "^2.1.0",
